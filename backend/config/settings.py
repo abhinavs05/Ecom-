@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'search',
     'returns',
     'common',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
