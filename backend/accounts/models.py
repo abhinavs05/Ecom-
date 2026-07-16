@@ -15,7 +15,7 @@ class User(AbstractUser):
     REQUIRED_FIELDS = ["username"]
 
 class Profile(models.Model):
-    user = models.OneToOneFiel(User, on_delete=models.CASCADE , related_name='profile')
+    user = models.OneToOneField(User, on_delete=models.CASCADE , related_name='profile')
     dob = models.DateField()
     
     class Gender(models.TextChoices):
@@ -33,7 +33,7 @@ class Profile(models.Model):
 class Address(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE , related_name='addresses')
 
-    full_name = models.CharField(max_length=50,default=user.username)
+    full_name = models.CharField(max_length=50)
 
     phone = PhoneNumberField()
 
