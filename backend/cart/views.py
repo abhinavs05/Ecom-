@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
-from .serializer import (
+from .serializers import (
     AddToCartSerializer,
     UpdateCartItemSerializer,
     CartSerializer,
@@ -32,7 +32,7 @@ class CartAPIView(APIView):
 
 class AddToCartAPIView(APIView):
 
-    permission_classes = [IsAuthenticated]
+  
 
     def post(self, request):
 
